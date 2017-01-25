@@ -1,0 +1,34 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+
+	<f:if condition="{settings.debug}">
+		<f:debug title="Results: Select.html">{_all}</f:debug>
+	</f:if>
+
+	<f:if condition="{error}">
+		<f:then>
+			<div class="panel panel-default">
+				<div class="panel-heading">Select for categories from pages</div>
+				<div class="panel-body">
+					<p>
+						Mit dieser Option werden nur die Seiten ausgegeben die eine Kategorie haben.
+						Es wird dann automatisch ein Link zur der Seite erstellt. + Titel der Seite
+					</p>
+					<div class="alert alert-danger">
+						<p>Error: {error}</p>
+					</div>
+				</div>
+			</div>
+		</f:then>
+		<f:else>
+			<f:for each="{selectAction}" as="pagesByCategory">
+				<f:for each="{pagesByCategory.result}" as="item">
+					<f:render partial="Hashtag/Page" arguments="{item: item}" />
+				</f:for>
+			</f:for>
+		</f:else>
+	</f:if>
+
+	<div class="clearfix"></div>
+</f:section>

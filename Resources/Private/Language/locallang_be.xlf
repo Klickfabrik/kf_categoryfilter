@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-01-11T15:49:13Z" product-name="kf_pagefilter">
+		<header/>
+		<body>
+			<trans-unit id="flexforms_general.settings">
+				<source>Settings</source>
+			</trans-unit>
+			<trans-unit id="pi1_title">
+				<source>Content Filter</source>
+			</trans-unit>
+			<trans-unit id="flexforms.mode.select">
+				<source> - please select - </source>
+			</trans-unit>
+			<trans-unit id="flexforms.mode.category.list">
+				<source>Categories as hashes</source>
+			</trans-unit>
+			<trans-unit id="flexforms.mode.category.list_current">
+				<source>Categories as hashes (current Page)</source>
+			</trans-unit>
+			<trans-unit id="flexforms.mode.category.select">
+				<source>Categories from pages</source>
+			</trans-unit>
+			<trans-unit id="flexforms.mode.category.isotope">
+				<source>Categories as isotope</source>
+			</trans-unit>
+			<trans-unit id="flexforms_general.parentCategories">
+				<source>Categories</source>
+			</trans-unit>
+			<trans-unit id="flexforms_general.recursive">
+				<source>Recursive (all subcategories)</source>
+			</trans-unit>
+			<trans-unit id="flexforms_general.debug">
+				<source>Debugmode</source>
+			</trans-unit>
+
+
+			<!-- tab: options -->
+			<trans-unit id="flexforms_general.options">
+				<source>Options</source>
+			</trans-unit>
+			<trans-unit id="flexforms_general.orderBy">
+				<source>Sorting</source>
+			</trans-unit>
+			<trans-unit id="flexforms_general.orderBy.asc">
+				<source>ascending (ASC)</source>
+			</trans-unit>
+			<trans-unit id="flexforms_general.orderBy.desc">
+				<source>descending (DESC)</source>
+			</trans-unit>
+			<trans-unit id="flexforms_general.orderByType">
+				<source>Sorting by</source>
+			</trans-unit>
+			<trans-unit id="flexforms_general.orderByType.id">
+				<source>Page-ID</source>
+			</trans-unit>
+			<trans-unit id="flexforms_general.orderByType.name">
+				<source>Page-Name</source>
+			</trans-unit>
+			<trans-unit id="flexforms_general.orderByType.pagetree">
+				<source>Page-Tree</source>
+			</trans-unit>
+			<trans-unit id="flexforms_general.limit">
+				<source>Limit</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

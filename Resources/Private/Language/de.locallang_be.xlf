@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2016-01-11T15:49:13Z" product-name="kf_pagefilter">
+		<header/>
+		<body>
+
+			<trans-unit id="pi1_title">
+				<source>Content Filter</source>
+			</trans-unit>
+			<trans-unit id="flexforms.mode.select">
+				<source> - bitte wählen - </source>
+			</trans-unit>
+			<trans-unit id="flexforms.mode.category.list">
+				<source>Kategorien als Hashliste</source>
+			</trans-unit>
+			<trans-unit id="flexforms.mode.category.select">
+				<source>Kategorien als Seitenlinks</source>
+			</trans-unit>
+			<trans-unit id="flexforms.mode.category.isotope">
+				<source>Kategorien als Isotope</source>
+			</trans-unit>
+
+			<trans-unit id="flexforms_general.settings">
+				<source>Optionen</source>
+			</trans-unit>
+			<trans-unit id="flexforms_general.orderBy">
+				<source>Sortierung</source>
+			</trans-unit>
+			<trans-unit id="flexforms_general.orderBy.asc">
+				<source>Aufsteigend (ASC)</source>
+			</trans-unit>
+			<trans-unit id="flexforms_general.orderBy.desc">
+				<source>Absteigend (DESC)</source>
+			</trans-unit>
+			<trans-unit id="flexforms_general.limit">
+				<source>Limit</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,32 @@
+
+plugin.tx_kfcategoryfilter_pi1 {
+	view {
+		templateRootPaths.0 = {$plugin.tx_kfcategoryfilter_pi1.view.templateRootPath}
+		partialRootPaths.0 = {$plugin.tx_kfcategoryfilter_pi1.view.partialRootPath}
+		layoutRootPaths.0 = {$plugin.tx_kfcategoryfilter_pi1.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_kfcategoryfilter_pi1.persistence.storagePid}
+	}
+}
+
+
+
+page {
+
+	includeCSS {
+		tx_kfcategoryfilter	= {$plugin.tx_kfcategoryfilter_pi1.settings.css.plugin}
+	}
+
+	includeJS {
+		jquery          	= {$plugin.tx_kfcategoryfilter_pi1.settings.javaScript.jQuery}
+		jquery {
+			if.isTrue = {$plugin.tx_kfcategoryfilter_pi1.settings.javaScript.includeJquery}
+		}
+	}
+
+	includeJSFooter {
+		isotope				= {$plugin.tx_kfcategoryfilter_pi1.settings.javaScript.isotope}
+		tx_kfcategoryfilter	= {$plugin.tx_kfcategoryfilter_pi1.settings.javaScript.plugin}
+	}
+}

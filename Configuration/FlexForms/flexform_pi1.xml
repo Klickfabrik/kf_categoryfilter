@@ -1,0 +1,163 @@
+<T3DataStructure>
+	<sheets>
+		<sDEF>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:kf_categoryfilter/Resources/Private/Language/locallang_be.xlf:flexforms_general.settings</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<switchableControllerActions>
+						<TCEforms>
+							<label>Select function</label>
+							<onChange>reload</onChange>
+							<config>
+								<type>select</type>
+								<items>
+									<numIndex index="0">
+										<numIndex index="0">LLL:EXT:kf_categoryfilter/Resources/Private/Language/locallang_be.xlf:flexforms.mode.select</numIndex>
+										<numIndex index="1"> </numIndex>
+									</numIndex>
+									<numIndex index="1">
+										<numIndex index="0">LLL:EXT:kf_categoryfilter/Resources/Private/Language/locallang_be.xlf:flexforms.mode.category.list</numIndex>
+										<numIndex index="1">Categories->list</numIndex>
+									</numIndex>
+									<numIndex index="2">
+										<numIndex index="0">LLL:EXT:kf_categoryfilter/Resources/Private/Language/locallang_be.xlf:flexforms.mode.category.list_current</numIndex>
+										<numIndex index="1">Categories->list_current</numIndex>
+									</numIndex>
+									<numIndex index="3">
+										<numIndex index="0">LLL:EXT:kf_categoryfilter/Resources/Private/Language/locallang_be.xlf:flexforms.mode.category.select</numIndex>
+										<numIndex index="1">Categories->select</numIndex>
+									</numIndex>
+									<numIndex index="4">
+										<numIndex index="0">LLL:EXT:kf_categoryfilter/Resources/Private/Language/locallang_be.xlf:flexforms.mode.category.isotope</numIndex>
+										<numIndex index="1">Categories->isotope</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</switchableControllerActions>
+					<settings.parentCategories>
+						<TCEforms>
+							<displayCond>
+								<OR>
+									<numIndex index="0">FIELD:switchableControllerActions:=:Filter->list</numIndex>
+									<numIndex index="1">FIELD:switchableControllerActions:=:Filter->select</numIndex>
+									<numIndex index="2">FIELD:switchableControllerActions:=:Filter->isotope</numIndex>
+								</OR>
+							</displayCond>
+							<label>LLL:EXT:kf_categoryfilter/Resources/Private/Language/locallang_be.xlf:flexforms_general.parentCategories</label>
+							<config>
+								<type>select</type>
+								<internal_type>db</internal_type>
+								<allowed>sys_category</allowed>
+								<foreign_table>sys_category</foreign_table>
+								<foreign_table_where> AND sys_category.sys_language_uid IN (-1, 0) ORDER BY sys_category.sorting ASC</foreign_table_where>
+
+								<size>10</size>
+								<maxitems>9999</maxitems>
+								<minitems>0</minitems>
+								<renderMode>tree</renderMode>
+								<treeConfig>
+									<appearance>
+										<expandAll>1</expandAll>
+										<showHeader>1</showHeader>
+									</appearance>
+									<parentField>parent</parentField>
+								</treeConfig>
+							</config>
+						</TCEforms>
+					</settings.parentCategories>
+					<settings.recursive>
+						<TCEforms type="array">
+							<label>LLL:EXT:kf_categoryfilter/Resources/Private/Language/locallang_be.xlf:flexforms_general.recursive</label>
+							<config>
+								<type>check</type>
+							</config>
+						</TCEforms>
+					</settings.recursive>
+					<settings.debug>
+						<TCEforms type="array">
+							<label>LLL:EXT:kf_categoryfilter/Resources/Private/Language/locallang_be.xlf:flexforms_general.debug</label>
+							<config>
+								<type>check</type>
+							</config>
+						</TCEforms>
+					</settings.debug>
+				</el>
+			</ROOT>
+		</sDEF>
+		<sOptions>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:kf_categoryfilter/Resources/Private/Language/locallang_be.xlf:flexforms_general.options</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<!-- order direction -->
+					<settings.orderByType>
+						<TCEforms>
+							<label>LLL:EXT:kf_categoryfilter/Resources/Private/Language/locallang_be.xlf:flexforms_general.orderByType</label>
+							<config>
+								<type>select</type>
+								<items>
+									<numIndex index="0">
+										<numIndex index="0">LLL:EXT:kf_categoryfilter/Resources/Private/Language/locallang_be.xlf:flexforms.mode.select</numIndex>
+										<numIndex index="1"> </numIndex>
+									</numIndex>
+									<numIndex index="1">
+										<numIndex index="0">LLL:EXT:kf_categoryfilter/Resources/Private/Language/locallang_be.xlf:flexforms_general.orderByType.id</numIndex>
+										<numIndex index="1">uid</numIndex>
+									</numIndex>
+									<numIndex index="2">
+										<numIndex index="0">LLL:EXT:kf_categoryfilter/Resources/Private/Language/locallang_be.xlf:flexforms_general.orderByType.name</numIndex>
+										<numIndex index="1">title</numIndex>
+									</numIndex>
+									<numIndex index="3">
+										<numIndex index="0">LLL:EXT:kf_categoryfilter/Resources/Private/Language/locallang_be.xlf:flexforms_general.orderByType.pagetree</numIndex>
+										<numIndex index="1">sorting</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.orderByType>
+
+					<settings.orderBy>
+						<TCEforms>
+							<label>LLL:EXT:kf_categoryfilter/Resources/Private/Language/locallang_be.xlf:flexforms_general.orderBy</label>
+							<config>
+								<type>select</type>
+								<items>
+									<numIndex index="0">
+										<numIndex index="0">LLL:EXT:kf_categoryfilter/Resources/Private/Language/locallang_be.xlf:flexforms.mode.select</numIndex>
+										<numIndex index="1"> </numIndex>
+									</numIndex>
+									<numIndex index="1">
+										<numIndex index="0">LLL:EXT:kf_categoryfilter/Resources/Private/Language/locallang_be.xlf:flexforms_general.orderBy.asc</numIndex>
+										<numIndex index="1">asc</numIndex>
+									</numIndex>
+									<numIndex index="2">
+										<numIndex index="0">LLL:EXT:kf_categoryfilter/Resources/Private/Language/locallang_be.xlf:flexforms_general.orderBy.desc</numIndex>
+										<numIndex index="1">desc</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.orderBy>
+
+					<!-- limit -->
+					<settings.limit>
+						<TCEforms>
+							<label>LLL:EXT:kf_categoryfilter/Resources/Private/Language/locallang_be.xlf:flexforms_general.limit</label>
+							<config>
+								<type>input</type>
+								<size>30</size>
+							</config>
+						</TCEforms>
+					</settings.limit>
+				</el>
+			</ROOT>
+		</sOptions>
+	</sheets>
+</T3DataStructure>

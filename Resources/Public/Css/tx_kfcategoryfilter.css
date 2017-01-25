@@ -1,0 +1,16 @@
+.tx-kf-categoryfilter {display: block;margin: 20px 0}
+
+.tx-kf-categoryfilter .hashtag {margin: 0 5px 10px 5px;display: inline-block;cursor: pointer;}
+.tx-kf-categoryfilter .hashtag {-webkit-transition: all 300ms ease;-moz-transition: all 300ms ease;-ms-transition: all 300ms ease;-o-transition: all 300ms ease;transition: all 300ms ease;}
+.tx-kf-categoryfilter .hashtag:hover {-moz-transform: scale(1.5);-webkit-transform: scale(1.5);-o-transform: scale(1.5);-ms-transform: scale(1.5);transform: scale(1.5);}
+.tx-kf-categoryfilter .hashtag span:before {content:"#";color:#fff;}
+.tx-kf-categoryfilter .hashtag a {color:#f3f3f3;text-decoration: none;}
+
+.tx-kf-categoryfilter .hashtag .label {background-color: #ff8000;color: white;font-style: italic;padding: 4px 14px;}
+
+
+
+.tx-kf-categoryfilter .hashtag.green .label {background-color: #79b949;}
+.tx-kf-categoryfilter .hashtag.green a {background-color: #fff;}
+.tx-kf-categoryfilter .hashtag.blue .label {background-color: #1aa4d5;}
+.tx-kf-categoryfilter .hashtag.blue a {background-color: #fff;}

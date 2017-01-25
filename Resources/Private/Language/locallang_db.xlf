@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-01-16T10:54:19Z" product-name="kf_categoryfilter">
+		<header/>
+		<body>
+			<trans-unit id="tx_kfcategoryfilter_domain_model_categories">
+				<source>Categories</source>
+			</trans-unit>
+			<trans-unit id="tt_content.link">
+				<source>Category link</source>
+			</trans-unit>
+			<trans-unit id="tt_content.class">
+				<source>Category class</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

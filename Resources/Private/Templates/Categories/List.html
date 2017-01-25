@@ -1,0 +1,34 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+
+	<f:if condition="{settings.debug}">
+		<f:debug title="Results: List.html">{_all}</f:debug>
+	</f:if>
+
+	<f:if condition="{error}">
+		<f:then>
+			<div class="panel panel-default">
+				<div class="panel-heading">Listing for categories</div>
+				<div class="panel-body">
+					<p>
+						Hier wird nur eine Liste der Ausgewählten Kategorien ausgegeben.
+						Sollte in der Kategorie ein Link versehen sein, wird dieser auch
+						als Link dann ausgegeben. So kann individuell für jeden Hashtag eine
+						Landingpage bauen
+					</p>
+					<div class="alert alert-danger">
+						<p>Error: {error}</p>
+					</div>
+				</div>
+			</div>
+		</f:then>
+		<f:else>
+			<f:for each="{categories}" as="item">
+				<f:render partial="Hashtag/Hashtag" arguments="{item: item}" />
+			</f:for>
+		</f:else>
+	</f:if>
+
+	<div class="clearfix"></div>
+</f:section>

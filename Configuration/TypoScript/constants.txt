@@ -1,0 +1,32 @@
+plugin.tx_kfcategoryfilter_pi1 {
+	view {
+		# cat=plugin.tx_kfcategoryfilter_pi1/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:kf_categoryfilter/Resources/Private/Templates/
+		# cat=plugin.tx_kfcategoryfilter_pi1/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:kf_categoryfilter/Resources/Private/Partials/
+		# cat=plugin.tx_kfcategoryfilter_pi1/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:kf_categoryfilter/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_kfcategoryfilter_pi1//a; type=string; label=Default storage PID
+		storagePid =
+	}
+
+	settings {
+		# cat=plugin.tx_kfcategoryfilter_pi1/file; type=boolean; label= Include JQuery?: You can enable or disable JQuery in your project
+		includeJquery = 1
+
+		javaScript {
+			# cat=plugin.tx_kfcategoryfilter_pi1/file; type=string; label=jQuery Script (1.11.2)
+			jQuery 	= EXT:kf_categoryfilter/Resources/Public/JavaScript/jquery-1.11.2.min.js
+			# cat=plugin.tx_kfcategoryfilter_pi1/file; type=string; label=Isotope PACKAGED v3.0.1
+			isotope	= EXT:kf_categoryfilter/Resources/Public/JavaScript/isotope.pkgd.min.js
+			# cat=plugin.tx_kfcategoryfilter_pi1/file; type=string; label=Plugin Script
+			plugin	= EXT:kf_categoryfilter/Resources/Public/JavaScript/tx_kfcategoryfilter.js
+		}
+		css {
+			# cat=plugin.tx_kfcategoryfilter_pi1/file; type=string; label=Plugin Stylesheet
+			plugin	= EXT:kf_categoryfilter/Resources/Public/Css/tx_kfcategoryfilter.css
+		}
+	}
+}
