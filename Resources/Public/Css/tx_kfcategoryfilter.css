@@ -14,3 +14,28 @@
 .tx-kf-categoryfilter .hashtag.green a {background-color: #fff;}
 .tx-kf-categoryfilter .hashtag.blue .label {background-color: #1aa4d5;}
 .tx-kf-categoryfilter .hashtag.blue a {background-color: #fff;}
+
+
+
+/* isotope */
+.tx-kf-categoryfilter_isotope {}
+.tx-kf-categoryfilter_isotope .element-item {position: relative;}
+.tx-kf-categoryfilter_isotope .element-item:hover .overlay-trans {height: 100%;opacity: 1;padding: 30px;width: 100%;}
+.tx-kf-categoryfilter_isotope .element-item .overlay-trans {height: 100%;left: 0;opacity: 0;padding: 30px;position: absolute;top: 0;transition: all 0.5s ease-in-out 0s;width: 100%;z-index: 100;}
+.tx-kf-categoryfilter_isotope .element-item .overlay-trans span {color: #4c4c4c;font-size: 20px;}
+.tx-kf-categoryfilter_isotope .element-item .overlay-trans h2 {color: white;font-size: 52px;margin-bottom: 40px;margin-top: 10px;}
+.tx-kf-categoryfilter_isotope .element-item .overlay-trans p {color: white;margin: 0 0 10px;}
+.tx-kf-categoryfilter_isotope .element-item .overlay-trans a {color: white;font-weight: bold;}
+.tx-kf-categoryfilter_isotope .element-item .overlay-trans a:hover {text-decoration: none;}
+
+.tx-kf-categoryfilter_isotope .element-item .overlay-trans {background-color: rgba(56, 195, 6, 0.7);}
+.tx-kf-categoryfilter_isotope .element-item.green .overlay-trans {background-color: rgba(56, 195, 6, 0.7);}
+.tx-kf-categoryfilter_isotope .element-item.blue .overlay-trans {background-color: rgba(26, 164, 213, 0.70);}
+.tx-kf-categoryfilter_isotope .element-item.orange .overlay-trans {background-color: rgba(255, 128, 0, 0.70);}
+
+
+
+/*
+.tx-kf-categoryfilter_isotope .element-item .overlay-trans::after {border-bottom: 40px solid rgba(56, 195, 6, 0.9);border-left: 40px solid transparent;border-right: 40px solid transparent;content: "";height: 0;left: 50%;position: absolute;top: -40px;transform: translateX(-50%);width: 0;z-index: 101;}
+.tx-kf-categoryfilter_isotope .element-item .overlay-trans a::after {content: "";margin-left: 5px;}
+*/

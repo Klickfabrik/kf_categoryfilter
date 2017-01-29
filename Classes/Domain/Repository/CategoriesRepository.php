@@ -41,6 +41,11 @@ class CategoriesRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
     protected static $storageTableName = 'sys_category';
 
 
+    private static $table_1 = "sys_category";
+    private static $table_2 = "sys_category_record_mm";
+    private static $table_3 = "pages";
+
+
     /**
      * @param $categoryId
      * @return mixed
@@ -120,9 +125,22 @@ class CategoriesRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
         $db             = self::getDatabaseConnection();
         $content        = Array();
 
+        $table_1        = self::$table_1;
+        $table_2        = self::$table_2;
+        $table_3        = self::$table_3;
 
 
-        $select_fields  = "pages.uid as puid, pages.title, sys_category.uid as cuid";
+
+        $select_fields  = join(",",array(
+            "{$table_1}.uid as cuid",
+            "{$table_3}.uid as puid",
+            "{$table_3}.title",
+
+            "{$table_3}.kf_categoryfilter_text as iso_text",
+            "{$table_3}.kf_categoryfilter_hover_text as iso_hover_text",
+            "{$table_3}.kf_categoryfilter_hover_color as iso_hover_color",
+        ));
+
         $from_table     = "pages";
         $from_table    .= " LEFT JOIN sys_category_record_mm ON pages.uid = sys_category_record_mm.uid_foreign JOIN sys_category ON sys_category.uid = sys_category_record_mm.uid_local";
         $where_clause   = "sys_category_record_mm.tablenames = 'pages' AND sys_category_record_mm.uid_local = {$uid}";
@@ -180,9 +198,9 @@ class CategoriesRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
         $db             = self::getDatabaseConnection();
         $content        = Array();
 
-        $table_1        = "sys_category";
-        $table_2        = "sys_category_record_mm";
-        $table_3        = "pages";
+        $table_1        = self::$table_1;
+        $table_2        = self::$table_2;
+        $table_3        = self::$table_3;
 
         /*
         SELECT
@@ -213,7 +231,10 @@ class CategoriesRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
             "{$table_1}.title","{$table_1}.description",
             "{$table_1}.parent",
             "{$table_1}.kf_categoryfilter_link",
-            "{$table_1}.kf_categoryfilter_class"
+            "{$table_1}.kf_categoryfilter_class",
+            "{$table_3}.kf_categoryfilter_text",
+            "{$table_3}.kf_categoryfilter_hover_text",
+            "{$table_3}.kf_categoryfilter_hover_color",
         ));
         $from_table     = "{$table_1}";
         $from_table    .= " LEFT JOIN {$table_2} ON {$table_1}.uid = {$table_2}.uid_local";

@@ -42,9 +42,9 @@
 						<TCEforms>
 							<displayCond>
 								<OR>
-									<numIndex index="0">FIELD:switchableControllerActions:=:Filter->list</numIndex>
-									<numIndex index="1">FIELD:switchableControllerActions:=:Filter->select</numIndex>
-									<numIndex index="2">FIELD:switchableControllerActions:=:Filter->isotope</numIndex>
+									<numIndex index="0">FIELD:switchableControllerActions:=:Categories->list</numIndex>
+									<numIndex index="1">FIELD:switchableControllerActions:=:Categories->select</numIndex>
+									<numIndex index="2">FIELD:switchableControllerActions:=:Categories->isotope</numIndex>
 								</OR>
 							</displayCond>
 							<label>LLL:EXT:kf_categoryfilter/Resources/Private/Language/locallang_be.xlf:flexforms_general.parentCategories</label>

@@ -122,6 +122,9 @@ class CategoriesController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
                     "catTitle"  => $uid['title'],
                     "puid"      => $uid['kf_categoryfilter_link'],
                     "class"     => $uid['kf_categoryfilter_class'],
+                    "iso_title"         => $uid['kf_categoryfilter_text'],
+                    "iso_hover_title"   => $uid['kf_categoryfilter_hover_text'],
+                    "iso_hover_color"   => $uid['kf_categoryfilter_hover_class'],
                     "catParent" => $uid['parent'],
                 );
             }
@@ -226,7 +229,7 @@ class CategoriesController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
                     $getPageUids[] = $result;
 
                     foreach ($result['result'] as $page){
-                        $getPageCats[$page['puid']][] = $findCategories[$uid]['catTitle'];
+                        $getPageCats[$page['puid']][] = $this->sonderzeichen($findCategories[$uid]['catTitle']);
                     }
 
                 } else {
@@ -249,7 +252,7 @@ class CategoriesController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
                             $data = $page;
                             $data['catTitle'] = $findCategories[$page['cuid']]['catTitle'];
                             $data['class_button'] = $this->sonderzeichen($findCategories[$page['cuid']]['catTitle']);
-                            $data['class_grid'] = $this->sonderzeichen(join(" ",$getPageCats[$page['puid']]));
+                            $data['class_grid'] = join(" ", $getPageCats[$page['puid']]);
                             $uniquePages['data'][] = $data;
                         }
                     }

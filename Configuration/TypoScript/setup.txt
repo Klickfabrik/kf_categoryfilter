@@ -21,7 +21,7 @@ page {
 	includeJS {
 		jquery          	= {$plugin.tx_kfcategoryfilter_pi1.settings.javaScript.jQuery}
 		jquery {
-			if.isTrue = {$plugin.tx_kfcategoryfilter_pi1.settings.javaScript.includeJquery}
+			if.isTrue 		= {$plugin.tx_kfcategoryfilter_pi1.settings.javaScript.includeJquery}
 		}
 	}
 

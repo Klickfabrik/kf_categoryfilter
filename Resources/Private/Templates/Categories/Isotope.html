@@ -1,50 +1,55 @@
 <f:layout name="Default" />
 
 <f:section name="main">
-	<f:if condition="{settings.debug}">
-		<f:debug title="Results: Isotope.html">{_all}</f:debug>
-	</f:if>
+	<div class="tx-kf-categoryfilter_isotope">
+		<f:if condition="{settings.debug}">
+			<f:debug title="Results: Isotope.html">{_all}</f:debug>
+		</f:if>
 
-	<f:if condition="{error}">
-		<f:then>
-			<div class="panel panel-default">
-				<div class="panel-heading">Select for categories from isotope</div>
-				<div class="panel-body">
-					<p>
-						Das Isotope erstellt nach wunsch aus einer Kategorie eine Auflistung
-						der Seiten mit einer Kategorie ähnlich wie "Select for categories from pages".
-						Nur das bei der Version noch die Relation-Datei ausgelesen wird.
-					</p>
-					<p>
-						Zu besprechen:<br/>
-						Soll man auf der Seite ein gesondertes Feld zum Pflegen von Inhalten haben?
-					</p>
-					<div class="alert alert-danger">
-						<p>Error: {error}</p>
+		<f:if condition="{error}">
+			<f:then>
+				<div class="panel panel-default">
+					<div class="panel-heading">Select for categories from isotope</div>
+					<div class="panel-body">
+						<p>
+							Das Isotope erstellt nach wunsch aus einer Kategorie eine Auflistung
+							der Seiten mit einer Kategorie ähnlich wie "Select for categories from pages".
+							Nur das bei der Version noch die Relation-Datei ausgelesen wird.
+						</p>
+						<p>
+							Zu besprechen:<br/>
+							Soll man auf der Seite ein gesondertes Feld zum Pflegen von Inhalten haben?
+						</p>
+						<div class="alert alert-danger">
+							<p>Error: {error}</p>
+						</div>
 					</div>
 				</div>
-			</div>
-		</f:then>
-		<f:else>
-			<div id="filters" class="button-group">
-				<f:for each="{categories}" as="item">
-					<f:render partial="Hashtag/Isotope" arguments="{item: item}" />
-				</f:for>
-			</div>
+			</f:then>
+			<f:else>
+				<div id="filters" class="button-group">
+					<f:for each="{categories}" as="item">
+						<f:render partial="Hashtag/Isotope" arguments="{item: item}" />
+					</f:for>
+				</div>
 
-			<div class="grid">
-				<f:for each="{selectAction.result}" as="item">
-					<div class="element-item {item.class_grid}" data-category="{item.class_grid}">
-						<f:link.page pageUid="{item.puid}">
-							<p>Seite: {item.title}</p>
-							<p>ID: {item.puid}</p>
-							<f:image src="/fileadmin/{item.identifier}" width="150" />
-						</f:link.page>
-					</div>
-				</f:for>
-			</div>
-		</f:else>
-	</f:if>
+				<div class="grid">
+					<f:for each="{selectAction.result}" as="item">
+						<div class="element-item {item.class_grid} {item.iso_hover_color}" data-category="{item.class_grid}">
+							<f:link.page pageUid="{item.puid}">
+								<div class="overlay-trans">
+									<span>{item.class_grid}</span>
+									<h2>{item.iso_hover_text}</h2>
+								</div>
+								<f:image src="/fileadmin/{item.identifier}" width="300" height="300c" />
+							</f:link.page>
+						</div>
+					</f:for>
+				</div>
 
-	<div class="clearfix"></div>
+			</f:else>
+		</f:if>
+
+		<div class="clearfix"></div>
+	</div>
 </f:section>

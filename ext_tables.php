@@ -92,3 +92,51 @@ if (!isset($TCA['sys_category']['ctrl']['type'])) {
 
 // Hooks
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawItem'][] = 'EXT:kf_categoryfilter/Classes/Hooks/DrawItem.php:KfCategoryFilter\\KfCategoryfilter\\Hooks\\PageLayoutViewDrawItemHook';
+
+
+
+/**
+ * add tab to pages
+ * add field to pages
+ */
+$pageColumns = array(
+    'kf_categoryfilter_text' => array(
+        'exclude' => 0,
+        'label' => 'LLL:EXT:kf_categoryfilter/Resources/Private/Language/locallang_db.xlf:pages.text',
+        'config' => array(
+            'type' => 'input',
+            'size' => 30,
+            'eval' => 'trim'
+        ),
+    ),
+    'kf_categoryfilter_hover_text' => array(
+        'exclude' => 0,
+        'label' => 'LLL:EXT:kf_categoryfilter/Resources/Private/Language/locallang_db.xlf:pages.hover_text',
+        'config' => array(
+            'type' => 'input',
+            'size' => 30,
+            'eval' => 'trim'
+        ),
+    ),
+    'kf_categoryfilter_hover_color' => array(
+        'exclude' => 0,
+        'label' => 'LLL:EXT:kf_categoryfilter/Resources/Private/Language/locallang_db.xlf:pages.hover_color',
+        'config' => array(
+            'type' => 'input',
+            'size' => 30,
+            'eval' => 'trim'
+        ),
+    ),
+);
+
+$insertPageArray = array();
+foreach ($pageColumns as $insertName => $insertValue){
+    $insertPageArray[] = $insertName;
+}
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages',$pageColumns,1);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('pages','--div--;LLL:EXT:kf_categoryfilter/Resources/Private/Language/locallang_db.xlf:pages.tabname,'.join(",",$insertPageArray));
+
+# multilanguage
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages_language_overlay',$pageColumns,1);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('pages_language_overlay','--div--;LLL:EXT:kf_categoryfilter/Resources/Private/Language/locallang_db.xlf:pages.tabname,'.join(",",$insertPageArray));

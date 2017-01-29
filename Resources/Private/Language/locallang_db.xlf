@@ -12,6 +12,20 @@
 			<trans-unit id="tt_content.class">
 				<source>Category class</source>
 			</trans-unit>
+
+
+			<trans-unit id="pages.tabname">
+				<source>Isotope options</source>
+			</trans-unit>
+			<trans-unit id="pages.text">
+				<source>Isotope Text</source>
+			</trans-unit>
+			<trans-unit id="pages.hover_text">
+				<source>Isotope Text (hover)</source>
+			</trans-unit>
+			<trans-unit id="pages.hover_color">
+				<source>Isotope Color (hover)</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
