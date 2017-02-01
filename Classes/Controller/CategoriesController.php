@@ -42,15 +42,17 @@ class CategoriesController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
 
 
     private $levelCategoryUids;
+    private $levelCategoryUidsMenu;
     private $currentPage;
     private $options;
 
 
 
     public function __getData(){
-        $this->levelCategoryUids    = \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode(',', $this->settings['parentCategories']);
-        $this->currentPage          = intval($GLOBALS['TSFE']->id);
-        $this->options              = $this->settings;
+        $this->levelCategoryUids        = \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode(',', $this->settings['parentCategories']);
+        $this->levelCategoryUidsMenu    = \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode(',', $this->settings['selectMenu']);
+        $this->currentPage              = intval($GLOBALS['TSFE']->id);
+        $this->options                  = $this->settings;
     }
 
     public function __getCategoryData($levelUids,$newOptions = array()){
@@ -195,14 +197,15 @@ class CategoriesController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
         // basics
         $options        = $this->settings;
         $levelUids      = $this->levelCategoryUids;
+        $levelUidsMenu  = $this->levelCategoryUidsMenu;
         $newLevelUids   = array();
 
 
-        if(!empty($levelUids[0]) && is_array($levelUids)) {
-            $this->view->assign('levelCategoryUids', $this->levelCategoryUids);
+        if(!empty($levelUidsMenu[0]) && is_array($levelUidsMenu)) {
+            $this->view->assign('levelCategoryUids', $levelUidsMenu);
 
-            // loop
-            foreach ($levelUids as $uid) {
+            // get Buttons
+            foreach ($levelUidsMenu as $uid) {
                 $getCats = $this->categoriesRepository->getCategoryData($uid, $options);
                 if (!empty($getCats['result'])) {
                     foreach ($getCats['result'] as $curData) {
@@ -222,46 +225,59 @@ class CategoriesController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
                 }
             }
 
+
+
+
+
             // get Pages
-            foreach ($newLevelUids as $uid){
-                $result = $this->categoriesRepository->getPageUids($uid,$options);
-                if(isset($result['result']) && !empty($result['result'])){
-                    $getPageUids[] = $result;
+            $pagesResult    = array();
+            $pageUids       = array();
+            $tmp = array();
 
-                    foreach ($result['result'] as $page){
-                        $getPageCats[$page['puid']][] = $this->sonderzeichen($findCategories[$uid]['catTitle']);
-                    }
+            foreach ($levelUids as $key => $uid){
 
-                } else {
-                    unset($findCategories[$uid]);
-                }
-            }
+                $getCats = $this->categoriesRepository->getCategoryData($uid, $options);
+
+                if (!empty($getCats['result'])) {
+                    foreach ($getCats['result'] as $curData) {
+                        $result = $this->categoriesRepository->getPageUids($curData['uid'],$options);
+
+                        if(isset($result['result']) && !empty($result['result'])){
+                            foreach ($result['result'] as $page){
+
+                                $tmp[$page['puid']][] = $page['title'];
 
 
-            // search unquie Pages
-            if(!empty($getPageUids) && is_array($getPageUids)){
-                $uniquePages = array(
-                    "pages" => array(),
-                    "data"  => array()
-                );
-                foreach ($getPageUids as $pageUid){
-                    foreach ($pageUid['result'] as $page){
-                        if(!in_array($page['puid'],$uniquePages['pages'])){
-                            $uniquePages['pages'][] = $page['puid'];
+                                if(!in_array($page['uid'],$pageUids)){
+                                    $pageUids[] = $page['puid'];
 
-                            $data = $page;
-                            $data['catTitle'] = $findCategories[$page['cuid']]['catTitle'];
-                            $data['class_button'] = $this->sonderzeichen($findCategories[$page['cuid']]['catTitle']);
-                            $data['class_grid'] = join(" ", $getPageCats[$page['puid']]);
-                            $uniquePages['data'][] = $data;
+                                    // get pageCategory
+                                    $getCatsData    = $this->categoriesRepository->getPageCategories(array($page['puid']),array());
+                                    $curPageCat = array();
+                                    if (!empty($getCatsData['result'])) {
+                                        foreach ($getCatsData['result'] as $curCatData) {
+                                            $curPageCat[] = $this->sonderzeichen($this->categoriesRepository->getField($curCatData, "title"));
+                                        }
+                                    }
+
+                                    // get pageContent
+                                    $getPageContent = $this->categoriesRepository->getPageContent($page,$options);
+
+
+                                    // build result
+                                    if(!empty($getPageContent['result'])){
+                                        $page['class_grid']         = join(" ",$curPageCat);
+                                        $page['pageData']           = !empty($getPageContent['result']) ? array_shift($getPageContent['result']) : "";
+                                        $pagesResult[$page['puid']] = $page;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
-                $findPageContent = $this->categoriesRepository->getPageContent($uniquePages['data'],$options);
-
-                $this->view->assign('selectAction', $findPageContent);
             }
 
+            $this->view->assign('pageData', $pagesResult);
             $this->view->assign('categories', $findCategories);
         } else {
             $this->view->assign('error', "Please select something");

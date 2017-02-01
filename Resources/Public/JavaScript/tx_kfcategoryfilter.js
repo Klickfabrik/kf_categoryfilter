@@ -2,10 +2,8 @@
  * Created by marcfinnern on 21.01.17.
  */
 
-
-(function ($, root, undefined) {
-
-// init Isotope
+function initIso(){
+    // init Isotope
     var $grid = $('.grid').isotope({
         itemSelector: '.element-item',
         layoutMode: 'fitRows',
@@ -57,6 +55,12 @@
             $( this ).addClass('is-checked');
         });
     });
+}
+
+(function ($, root, undefined) {
+
+    setTimeout(initIso,91);
+
 
 
 })(jQuery, this);

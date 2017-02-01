@@ -1,39 +1,94 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version='1.0' encoding='utf-8'?>
 <xliff version="1.0">
 	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2016-01-11T15:49:13Z" product-name="kf_pagefilter">
 		<header/>
 		<body>
-
+			<trans-unit id="flexforms_general.settings">
+				<source>Settings</source>
+				<target state="translated">Einstellungen</target>
+			</trans-unit>
 			<trans-unit id="pi1_title">
 				<source>Content Filter</source>
+				<target state="translated">Inhalt Filter</target>
+			</trans-unit>
+			<trans-unit id="flexforms.switchableController">
+				<source>Plugin options</source>
+				<target state="translated">Plugin Optionen</target>
 			</trans-unit>
 			<trans-unit id="flexforms.mode.select">
-				<source> - bitte wählen - </source>
+				<source> - please select - </source>
+				<target state="translated"> - Bitte wählen - </target>
 			</trans-unit>
 			<trans-unit id="flexforms.mode.category.list">
-				<source>Kategorien als Hashliste</source>
+				<source>Categories as hashes</source>
+				<target state="translated">Kategorien als Tags</target>
+			</trans-unit>
+			<trans-unit id="flexforms.mode.category.list_current">
+				<source>Categories as hashes (current Page)</source>
+				<target state="translated">Kategorien als Tags (aktuelle Seite)</target>
 			</trans-unit>
 			<trans-unit id="flexforms.mode.category.select">
-				<source>Kategorien als Seitenlinks</source>
+				<source>Categories from pages</source>
+				<target state="translated">Kategorien von Seiten</target>
 			</trans-unit>
 			<trans-unit id="flexforms.mode.category.isotope">
-				<source>Kategorien als Isotope</source>
+				<source>Categories as isotope</source>
+				<target state="translated">Kategorien als Isotope</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.selectMenu">
+				<source>Categories Menü</source>
+				<target state="translated">Kategorien Menü</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.parentCategories">
+				<source>Categories</source>
+				<target state="translated">Kategorien</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.recursive">
+				<source>Recursive (all subcategories)</source>
+				<target state="translated">Alle Punkte unter der Auswahl</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.debug">
+				<source>Debugmode</source>
+				<target state="translated">Debugmode</target>
 			</trans-unit>
 
-			<trans-unit id="flexforms_general.settings">
-				<source>Optionen</source>
+
+			<!-- tab: options -->
+			<trans-unit id="flexforms_general.options">
+				<source>Options</source>
+				<target state="translated">Options</target>
 			</trans-unit>
 			<trans-unit id="flexforms_general.orderBy">
-				<source>Sortierung</source>
+				<source>Sorting</source>
+				<target state="translated">Sortierung</target>
 			</trans-unit>
 			<trans-unit id="flexforms_general.orderBy.asc">
-				<source>Aufsteigend (ASC)</source>
+				<source>ascending (ASC)</source>
+				<target state="translated">Absteigend (ASC)</target>
 			</trans-unit>
 			<trans-unit id="flexforms_general.orderBy.desc">
-				<source>Absteigend (DESC)</source>
+				<source>descending (DESC)</source>
+				<target state="translated">Aufsteigend (DESC)</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.orderByType">
+				<source>Sorting by</source>
+				<target state="translated">Sortierung nach</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.orderByType.id">
+				<source>Page-ID</source>
+				<target state="translated">Seiten-ID</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.orderByType.name">
+				<source>Page-Name</source>
+				<target state="translated">Seiten-Name</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.orderByType.pagetree">
+				<source>Page-Tree</source>
+				<target state="translated">Seiten-Baum</target>
 			</trans-unit>
 			<trans-unit id="flexforms_general.limit">
 				<source>Limit</source>
+				<target state="translated">Limit</target>
 			</trans-unit>
 
 		</body>

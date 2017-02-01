@@ -9,6 +9,9 @@
 			<trans-unit id="pi1_title">
 				<source>Content Filter</source>
 			</trans-unit>
+			<trans-unit id="flexforms.switchableController">
+				<source>Select function</source>
+			</trans-unit>
 			<trans-unit id="flexforms.mode.select">
 				<source> - please select - </source>
 			</trans-unit>
@@ -23,6 +26,9 @@
 			</trans-unit>
 			<trans-unit id="flexforms.mode.category.isotope">
 				<source>Categories as isotope</source>
+			</trans-unit>
+			<trans-unit id="flexforms_general.selectMenu">
+				<source>Categories Menü</source>
 			</trans-unit>
 			<trans-unit id="flexforms_general.parentCategories">
 				<source>Categories</source>

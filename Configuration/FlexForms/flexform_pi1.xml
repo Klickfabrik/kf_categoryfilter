@@ -9,7 +9,7 @@
 				<el>
 					<switchableControllerActions>
 						<TCEforms>
-							<label>Select function</label>
+							<label>LLL:EXT:kf_categoryfilter/Resources/Private/Language/locallang_be.xlf:flexforms.switchableController</label>
 							<onChange>reload</onChange>
 							<config>
 								<type>select</type>
@@ -38,6 +38,35 @@
 							</config>
 						</TCEforms>
 					</switchableControllerActions>
+					<settings.selectMenu>
+						<TCEforms>
+							<displayCond>
+								<OR>
+									<numIndex index="2">FIELD:switchableControllerActions:=:Categories->isotope</numIndex>
+								</OR>
+							</displayCond>
+							<label>LLL:EXT:kf_categoryfilter/Resources/Private/Language/locallang_be.xlf:flexforms_general.selectMenu</label>
+							<config>
+								<type>select</type>
+								<internal_type>db</internal_type>
+								<allowed>sys_category</allowed>
+								<foreign_table>sys_category</foreign_table>
+								<foreign_table_where> AND sys_category.sys_language_uid IN (-1, 0) ORDER BY sys_category.sorting ASC</foreign_table_where>
+
+								<size>10</size>
+								<maxitems>9999</maxitems>
+								<minitems>0</minitems>
+								<renderMode>tree</renderMode>
+								<treeConfig>
+									<appearance>
+										<expandAll>1</expandAll>
+										<showHeader>1</showHeader>
+									</appearance>
+									<parentField>parent</parentField>
+								</treeConfig>
+							</config>
+						</TCEforms>
+					</settings.selectMenu>
 					<settings.parentCategories>
 						<TCEforms>
 							<displayCond>

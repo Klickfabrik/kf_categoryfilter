@@ -133,6 +133,7 @@ class CategoriesRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
         $select_fields  = join(",",array(
             "{$table_1}.uid as cuid",
+            "{$table_1}.uid as cuid",
             "{$table_3}.uid as puid",
             "{$table_3}.title",
 
@@ -171,23 +172,19 @@ class CategoriesRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
         $groupBy        = "";
         $orderByType    = isset($options['orderByType']) && !empty($options['orderByType']) ? "pages.{$options['orderByType']}" : 'pages.uid';
         $orderBy        = isset($options['orderBy']) && !empty($options['orderBy']) ? "{$orderByType} {$options['orderBy']}" : '';
-        $limit          = isset($options['limit']) && !empty($options['limit']) ? $options['limit'] : '';
+        $limit          = 1;
 
+        $where_clause   = "pages.uid = {$uid['puid']} AND pages.deleted = 0 AND pages.hidden = 0 AND sys_file_reference.tablenames = 'pages' ";
+        $res = $db->exec_SELECTquery($select_fields,$from_table,$where_clause,$groupBy,$orderBy,$limit);
 
-        if(is_string($uid)){
-            $uids[] = $uid;
-        } else {
-            $uids = $uid;
-        }
-
-        foreach ($uids as $id){
-            $where_clause   = "pages.uid = {$id['puid']} AND pages.deleted = 0 AND pages.hidden = 0 AND sys_file_reference.tablenames = 'pages' ";
-
-            $res = $db->exec_SELECTquery($select_fields,$from_table,$where_clause,$groupBy,$orderBy,$limit);
+        if(isset($res->num_rows) && $res->num_rows > 0){
             while ($row = $db->sql_fetch_assoc($res)) {
-                $content[] = array_merge($row,$id);
+                $content[] = array_merge($row,$uid);
             }
+        } else {
+            $content[] = $uid;
         }
+
 
         return array(
             "result"    => $content,
@@ -228,7 +225,8 @@ class CategoriesRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
         $select_fields  = join(",",array(
             "{$table_1}.uid",
-            "{$table_1}.title","{$table_1}.description",
+            "{$table_1}.title",
+            "{$table_1}.description",
             "{$table_1}.parent",
             "{$table_1}.kf_categoryfilter_link",
             "{$table_1}.kf_categoryfilter_class",

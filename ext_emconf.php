@@ -11,24 +11,25 @@
  ***************************************************************/
 
 $EM_CONF[$_EXTKEY] = array(
-	'title' => 'KF - Category Filter',
-	'description' => '',
-	'category' => 'plugin',
-	'author' => 'Marc Finnern',
-	'author_email' => 'typo3@klickfabrik.net',
-	'state' => 'beta',
-	'internal' => '',
-	'uploadfolder' => '0',
-	'createDirs' => '',
-	'clearCacheOnLoad' => 0,
-	'version' => '1.2.0',
-	'constraints' => array(
-		'depends' => array(
-			'typo3' => '7.6.0-7.6.99',
-		),
-		'conflicts' => array(
-		),
-		'suggests' => array(
-		),
-	),
+    'title' => 'KF - Category Filter',
+    'description' => '',
+    'category' => 'plugin',
+    'author' => 'Marc Finnern',
+    'author_email' => 'typo3@klickfabrik.net',
+    'state' => 'beta',
+    'internal' => '',
+    'uploadfolder' => '0',
+    'createDirs' => '',
+    'clearCacheOnLoad' => 0,
+    'version' => '1.2.1',
+    'constraints' => array(
+        'depends' => array(
+            'typo3' => '7.6.0-7.6.99',
+        ),
+        'conflicts' => array(
+        ),
+        'suggests' => array(
+        ),
+    ),
+    'clearcacheonload' => true,
 );
