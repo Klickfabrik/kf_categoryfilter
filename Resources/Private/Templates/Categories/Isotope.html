@@ -16,10 +16,6 @@
 							der Seiten mit einer Kategorie ähnlich wie "Select for categories from pages".
 							Nur das bei der Version noch die Relation-Datei ausgelesen wird.
 						</p>
-						<p>
-							Zu besprechen:<br/>
-							Soll man auf der Seite ein gesondertes Feld zum Pflegen von Inhalten haben?
-						</p>
 						<div class="alert alert-danger">
 							<p>Error: {error}</p>
 						</div>
@@ -28,7 +24,7 @@
 			</f:then>
 			<f:else>
 				<div id="filters" class="button-group">
-					<button class="button" data-filter="*">All</button>
+					<button class="button is-checked" data-filter="*">All</button>
 
 					<f:for each="{categories}" as="item">
 						<f:render partial="Hashtag/Isotope" arguments="{item: item}" />
@@ -37,27 +33,29 @@
 
 				<div class="grid row">
 					<f:for each="{pageData}" as="item">
-						<div class="col-md-3 element-item {item.class_grid} {item.pageData.iso_hover_color}" data-category="{item.class_grid}">
+						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 element-item {item.class_grid} {item.pageData.iso_hover_color}" data-category="{item.class_grid}">
 							<div class="grid_inner">
 								<f:link.page pageUid="{item.puid}">
 									<f:if condition="{item.pageData.identifier}">
 										<f:then>
 											<div class="overlay-trans">
-												<span>{item.class_grid}</span>
-												<h2>{item.pageData.iso_hover_text}</h2>
+												<span class="iso_title">{item.pageData.iso_title_text}</span>
+												<h4>{item.pageData.iso_hover_text}</h4>
+												<f:image src="EXT:kf_categoryfilter/Resources/Public/Images/chevron-circle-right.svg" class="img-responsive icon-chevron" />
 											</div>
-											<f:image src="/fileadmin/{item.pageData.identifier}" width="300" height="300c" class="img-responsive" />
+											<f:image src="/fileadmin/{item.pageData.identifier}" width="400" height="400c" class="img-responsive" />
 										</f:then>
 										<f:else>
 											<div class="bg">
-												<span>{item.class_grid}</span>
-												<h2>{item.pageData.iso_text}</h2>
+												<span class="iso_title">{item.pageData.iso_title_text}</span>
+												<h4>{item.pageData.iso_text}</h4>
 												<div class="overlay-trans">
-													<span>{item.class_grid}</span>
-													<h2>{item.pageData.iso_hover_text}</h2>
+													<span class="iso_title">{item.pageData.iso_title_text}</span>
+													<h4>{item.pageData.iso_hover_text}</h4>
+													<f:image src="EXT:kf_categoryfilter/Resources/Public/Images/chevron-circle-right.svg" class="img-responsive icon-chevron" />
 												</div>
 											</div>
-											<f:image src="EXT:kf_categoryfilter/Resources/Public/Images/blank.gif" width="300" height="300c" class="img-responsive" />
+											<f:image src="EXT:kf_categoryfilter/Resources/Public/Images/blank.gif" width="400" height="400c" class="img-responsive" />
 										</f:else>
 									</f:if>
 								</f:link.page>

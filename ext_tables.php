@@ -68,6 +68,15 @@ $pageColumns = array(
             'eval' => 'trim'
         ),
     ),
+    'kf_categoryfilter_title_text' => array(
+        'exclude' => 0,
+        'label' => "{$langFile}:pages.title_text", //'LLL:EXT:kf_categoryfilter/Resources/Private/Language/locallang_db.xlf:pages.hover_text',
+        'config' => array(
+            'type' => 'input',
+            'size' => 30,
+            'eval' => 'trim'
+        ),
+    ),
     'kf_categoryfilter_hover_color' => array(
         'exclude' => 0,
         'label' => "{$langFile}:pages.hover_color", //'LLL:EXT:kf_categoryfilter/Resources/Private/Language/locallang_db.xlf:pages.hover_color',

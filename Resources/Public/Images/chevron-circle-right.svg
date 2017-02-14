@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        fill-rule: evenodd;
+        opacity: 0.8;
+      }
+    </style>
+  </defs>
+  <path id="chevron-circle-right.svg" class="cls-1" d="M846.993,1619.99a18,18,0,1,0-12.707-5.27,17.989,17.989,0,0,0,12.707,5.27h0Zm-2.1-10.4,7.4-7.44a0.21,0.21,0,0,0,0-.3l-7.4-7.41a0.228,0.228,0,0,0-.308,0l-1.628,1.63,5.779,5.78a0.21,0.21,0,0,1,0,.3l-5.779,5.78,1.628,1.66a0.228,0.228,0,0,0,.308,0h0Z" transform="translate(-829 -1584)"/>
+</svg>

@@ -12,7 +12,7 @@
 
 $EM_CONF[$_EXTKEY] = array(
     'title' => 'KF - Category Filter',
-    'description' => '',
+    'description' => 'Display sys_category in an other way.',
     'category' => 'plugin',
     'author' => 'Marc Finnern',
     'author_email' => 'typo3@klickfabrik.net',
@@ -21,7 +21,7 @@ $EM_CONF[$_EXTKEY] = array(
     'uploadfolder' => '0',
     'createDirs' => '',
     'clearCacheOnLoad' => 0,
-    'version' => '1.2.1',
+    'version' => '1.2.2',
     'constraints' => array(
         'depends' => array(
             'typo3' => '7.6.0-7.6.99',

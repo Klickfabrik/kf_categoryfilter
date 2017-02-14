@@ -70,6 +70,7 @@ class CategoriesController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
                         $find[] = array(
                             "catId"     => $uid,
                             "catTitle"  => $this->categoriesRepository->getField($curData, "title"),
+                            "class"     => $this->categoriesRepository->getField($curData, "kf_categoryfilter_class"),
                             "puid"      => $this->categoriesRepository->getField($curData, "kf_categoryfilter_link"),
                             "catParent" => $this->categoriesRepository->getField($curData, "parent")
                         );
@@ -162,13 +163,13 @@ class CategoriesController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContr
                     foreach ($getCats['result'] as $curData) {
                         $uid    = $this->categoriesRepository->getField($curData, "uid");
                         $result = $this->categoriesRepository->getPageUids($uid,$options);
-                        if(!empty($result['result'])){
 
+                        if(!empty($result['result'])){
                             // skip double pages
                             foreach ($result['result'] as $page){
                                 if(!in_array($page['puid'],$foundPages)){
                                     $foundPages[] = $page['puid'];
-                                    $find[$uid] = $result;
+                                    $find[$page['puid']] = $page;
                                 }
                             }
                         }

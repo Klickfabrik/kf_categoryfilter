@@ -134,10 +134,12 @@ class CategoriesRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
         $select_fields  = join(",",array(
             "{$table_1}.uid as cuid",
             "{$table_1}.uid as cuid",
+
             "{$table_3}.uid as puid",
             "{$table_3}.title",
 
             "{$table_3}.kf_categoryfilter_text as iso_text",
+            "{$table_3}.kf_categoryfilter_title_text as iso_title_text",
             "{$table_3}.kf_categoryfilter_hover_text as iso_hover_text",
             "{$table_3}.kf_categoryfilter_hover_color as iso_hover_color",
         ));

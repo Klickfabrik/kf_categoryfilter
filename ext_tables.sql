@@ -51,6 +51,7 @@ CREATE TABLE sys_category (
 #
 CREATE TABLE pages (
   kf_categoryfilter_text VARCHAR(255) DEFAULT '' NOT NULL,
+  kf_categoryfilter_title_text VARCHAR(255) DEFAULT '' NOT NULL,
   kf_categoryfilter_hover_text VARCHAR(255) DEFAULT '' NOT NULL,
   kf_categoryfilter_hover_color VARCHAR(255) DEFAULT '' NOT NULL
 );
@@ -58,6 +59,7 @@ CREATE TABLE pages (
 
 CREATE TABLE pages_language_overlay (
   kf_categoryfilter_text VARCHAR(255) DEFAULT '' NOT NULL,
+  kf_categoryfilter_title_text VARCHAR(255) DEFAULT '' NOT NULL,
   kf_categoryfilter_hover_text VARCHAR(255) DEFAULT '' NOT NULL,
   kf_categoryfilter_hover_color VARCHAR(255) DEFAULT '' NOT NULL
 );
