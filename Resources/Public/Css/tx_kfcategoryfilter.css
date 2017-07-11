@@ -13,7 +13,7 @@
 .tx-kf-categoryfilter .hashtag.green:hover .label {background-color: #38c805;}
 .tx-kf-categoryfilter .hashtag.green a {background-color: #fff;}
 .tx-kf-categoryfilter .hashtag.blue:hover .label {background-color: #1aa4d5;}
-.tx-kf-categoryfilter .hashtag.blue a {background-color: #fff;}
+.tx-kf-categoryfilter .hashtag.blue a {}
 
 .tx-kf-categoryfilter_select .hashtag.green a,
 .tx-kf-categoryfilter_select .hashtag.blue a,
@@ -39,8 +39,7 @@
 .tx-kf-categoryfilter_isotope .element-item img {width: 100%;max-width: inherit;}
 .tx-kf-categoryfilter_isotope .element-item:hover .overlay-trans {height: 100%;opacity: 1;padding: 30px;width: 100%;}
 .tx-kf-categoryfilter_isotope .element-item .iso_title {font-size: 18px;font-weight: 700;}
-.tx-kf-categoryfilter_isotope .element-item:hover .iso_title {color:#fff;}
-.tx-kf-categoryfilter_isotope .element-item .overlay-trans {height: 100%;left: 0;opacity: 0;padding: 30px;position: absolute;top: 0;transition: all 0.5s ease-in-out 0s;width: 100%;z-index: 100;}
+.tx-kf-categoryfilter_isotope .element-item .overlay-trans {height: 100%;left: 0;opacity: 0;padding: 30px;position: absolute;top: 0;width: 100%;z-index: 100;}
 .tx-kf-categoryfilter_isotope .element-item .overlay-trans .icon-chevron {position: absolute;left: 50%;bottom:20px;margin: 0 0 0 -18px;}
 .tx-kf-categoryfilter_isotope .element-item .overlay-trans p {color: white;margin: 0 0 10px;}
 .tx-kf-categoryfilter_isotope .element-item .overlay-trans a {color: white;font-weight: bold;}
@@ -48,20 +47,26 @@
 
 
 /* colors */
-.tx-kf-categoryfilter_isotope .element-item * {color:#4d4f4f;}
-.tx-kf-categoryfilter_isotope .element-item:hover * {color: #fff;}
-.tx-kf-categoryfilter_isotope .element-item .overlay-trans {background-color: rgba(238, 127, 0, 0.60);}
+.tx-kf-categoryfilter_isotope .element-item {background-color: #ee7f00;}
+.tx-kf-categoryfilter_isotope .element-item * {color:#fff;}
+.tx-kf-categoryfilter_isotope .element-item:hover {background-color: #fff;}
+.tx-kf-categoryfilter_isotope .element-item:hover .bg * {color: #ee7f00;fill: #ee7f00;}
+.tx-kf-categoryfilter_isotope .element-item .overlay-trans {}
 
 .tx-kf-categoryfilter_isotope .element-item.green .overlay-trans {background-color: rgba(56, 200, 5, 0.60);}
-.tx-kf-categoryfilter_isotope .element-item.green:hover * {color: #fff;}
+.tx-kf-categoryfilter_isotope .element-item.green:hover * {color: #fff;fill: #fff;}
 .tx-kf-categoryfilter_isotope .element-item.blue .overlay-trans {background-color: rgba(26, 164, 213, 0.60);}
-.tx-kf-categoryfilter_isotope .element-item.blue:hover * {color: #fff;}
+.tx-kf-categoryfilter_isotope .element-item.blue:hover * {color: #fff;fill: #fff;}
 .tx-kf-categoryfilter_isotope .element-item.orange .overlay-trans {background-color: rgba(238, 127, 0, 0.60);}
-.tx-kf-categoryfilter_isotope .element-item.orange:hover * {color: #fff;}
+.tx-kf-categoryfilter_isotope .element-item.orange:hover * {color: #fff;fill: #fff;}
+
 
 
 
 /* transition */
-.tx-kf-categoryfilter_isotope .element-item *,
+/*
+.tx-kf-categoryfilter_isotope .element-item,
+.tx-kf-categoryfilter_isotope .overlay-trans,
+*/
 .tx-kf-categoryfilter .hashtag,
 .tx-kf-categoryfilter .hashtag .label {-webkit-transition: all 300ms ease;-moz-transition: all 300ms ease;-ms-transition: all 300ms ease;-o-transition: all 300ms ease;transition: all 300ms ease;}

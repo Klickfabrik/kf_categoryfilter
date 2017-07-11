@@ -176,7 +176,8 @@ class CategoriesRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
         $orderBy        = isset($options['orderBy']) && !empty($options['orderBy']) ? "{$orderByType} {$options['orderBy']}" : '';
         $limit          = 1;
 
-        $where_clause   = "pages.uid = {$uid['puid']} AND pages.deleted = 0 AND pages.hidden = 0 AND sys_file_reference.tablenames = 'pages' ";
+        $where_clause   = "pages.uid = {$uid['puid']} AND pages.deleted = 0 AND pages.hidden = 0";
+        $where_clause   .= " AND sys_file_reference.deleted = 0 AND sys_file_reference.hidden = 0 AND sys_file_reference.tablenames = 'pages' ";
         $res = $db->exec_SELECTquery($select_fields,$from_table,$where_clause,$groupBy,$orderBy,$limit);
 
         if(isset($res->num_rows) && $res->num_rows > 0){
@@ -187,11 +188,12 @@ class CategoriesRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
             $content[] = $uid;
         }
 
-
-        return array(
+        $returnArray = array(
             "result"    => $content,
             "query"     => $db->debug_lastBuiltQuery,
         );
+
+        return $returnArray;
     }
     private function searchPageCategories($uid=null,$options=array()){
         $db             = self::getDatabaseConnection();
